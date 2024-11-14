@@ -1,4 +1,3 @@
-import { NASA_API_KEY } from "./private.js";
 const main = document.querySelector("main");
 const apodEl = document.querySelector(".apod");
 const roverList = document.querySelector(".rover-list");
@@ -55,7 +54,7 @@ submitButton.addEventListener("click", function () {
     ? dateInput.value
     : new Date().toISOString().slice(0, 10);
 
-  const roverURL = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${date}&api_key=${NASA_API_KEY}`;
+  const roverURL = `https://leafy-macaron-083959.netlify.app/.netlify/functions/apodAPI?date=${date}`;
 
   fetchData(roverURL, handleRoverData);
 });
